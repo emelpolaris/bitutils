@@ -1,7 +1,12 @@
 import bittensor as bt
 import time
+from fastapi import FastAPI
+
+app = FastAPI()
+
 name_s58_emission_rank_old = {}
 name_s58_emission_rank_new = {}
+result = {}
 my_hotkeys = {
     'JJhot': '5F97aEdNArw3eDrpsXqtukxgzoQT6yxiVArf4RiceNKGYh71', 'JJwarm': '5EboAn9c92EhYrU12Cp31EavaJ4PLroZiJfujwDyzhQqxL1K',
     'JJa': '5DCx43cgGoPUW8p8zMB7JzQzfsFRi2PRULdVYkdySjb88wRM', 'JJb': '5GRUxyJAowgfjj8Kj66vMqbY1DScMNu2YWvqfNZ5smzmZ5G7',
@@ -15,8 +20,12 @@ my_hotkeys = {
     'Zf': '5EHkZPvGjy78PZ7jDQDHW5HqMJNq65fqgRT8x7BSmKae6Pdg', 'Zg': '5GNTpdkRCFNG4qadYa9jbPVgcGKFhx3RK7ZEJPGYZWuUrw4C',
     'Zh': '5HNgG2DaP5jeHdRacLKCz2m2r6F5tQnyNy7uNz7ESzZZ6u87'
 }
-def run():
-    global name_s58_emission_rank_old, name_s58_emission_rank_new
+
+@app.get("/")
+def show():
+    return "hello world"
+def fetch():
+    global name_s58_emission_rank_old, name_s58_emission_rank_new, result
 
     metagraph = bt.subtensor('finney').metagraph(netuid=31)
     emissions = metagraph.E.tolist()
@@ -50,8 +59,18 @@ def run():
         rank_diff = name_s58_emission_rank_new[key][2] - name_s58_emission_rank_old[key][2]
         result[key] = [name_s58_emission_rank_new[key][2], rank_diff]
     print(result)
+    try:
+        log_file = open('logs.txt', 'a')
+    except FileNotFoundError:
+        log_file = open('logs.txt', 'w')
+    log_file.write('------------\n')
+    log_file.write(str(result))
+    log_file.close()
     name_s58_emission_rank_old = name_s58_emission_rank_new
+
 if __name__ == '__main__':
+    # import uvicorn
+    # uvicorn.run(app, host="24.83.20.198", port=80)
     while True:
-        run()
+        fetch()
         time.sleep(600)
