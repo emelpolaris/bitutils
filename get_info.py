@@ -1,6 +1,7 @@
 import bittensor as bt
 import time
 from fastapi import FastAPI
+import argparse
 
 app = FastAPI()
 
@@ -24,10 +25,10 @@ my_hotkeys = {
 @app.get("/")
 def show():
     return "hello world"
-def fetch():
+def fetch(netuid: int):
     global name_s58_emission_rank_old, name_s58_emission_rank_new, result
 
-    metagraph = bt.subtensor('finney').metagraph(netuid=31)
+    metagraph = bt.subtensor('finney').metagraph(netuid=netuid)
     emissions = metagraph.E.tolist()
     hotkeys = metagraph.hotkeys
 
@@ -71,6 +72,10 @@ def fetch():
 if __name__ == '__main__':
     # import uvicorn
     # uvicorn.run(app, host="24.83.20.198", port=80)
+    argp = argparse.ArgumentParser(description="config")
+    argp.add_argument("--netuid", type=int, default=31)
+    args  = argp.parse_args()
+    netuid = args.netuid
     while True:
-        fetch()
+        fetch(netuid)
         time.sleep(600)
