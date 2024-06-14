@@ -9,7 +9,7 @@ import getpass
 # configure options for your command
 wallet = "JJcold"#"main-wallet"       # wallet name of your coldkey
 # hotkeys = ["JJwarm", "JJhot", "JJa", "JJb", "JJc", "JJd", "JJe", "JJf", "JJg", "JJh", "JJi", "JJj"] #["mining-hotkey-2"]        # a list with the names of all the hotkeys you want to register
-hotkeys = ["JJf"]
+hotkeys = ["JJhot"]
 netuid = int(input('Subnet ID: '))                        # subnet uid you want to register
 highest_cost = float(input('Max registration fee: '))                # the maximal amount of tao you are willing to burn to register
 # print('Type in your password:')
