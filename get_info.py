@@ -19,7 +19,14 @@ my_hotkeys = {
     'Zb': '5DV7ykzp1ianL33nvgj5bEufe77asDzUDMqqHjrhUCtcACFZ', 'Zc': '5F2Hd7LmyJ4Q1c1ATQ1UP6TErZTiCRcjRMiExptHC7BwN7XW',
     'Zd': '5CFW1vhgcsHU4AG4nqArqc6omQsAJWJqe41aHNpWUHPxQEpa', 'Ze': '5G9JHYtFiyU7dCM4HY2S3WnYgWhhGBq7MKdN59DnyhuvXa74',
     'Zf': '5EHkZPvGjy78PZ7jDQDHW5HqMJNq65fqgRT8x7BSmKae6Pdg', 'Zg': '5GNTpdkRCFNG4qadYa9jbPVgcGKFhx3RK7ZEJPGYZWuUrw4C',
-    'Zh': '5HNgG2DaP5jeHdRacLKCz2m2r6F5tQnyNy7uNz7ESzZZ6u87'
+    'Zh': '5HNgG2DaP5jeHdRacLKCz2m2r6F5tQnyNy7uNz7ESzZZ6u87', 'TTa' : '5DCUmErSWGmLAyvGDJqqZZenCVSueAyBpWoYPQ38znRNagFu',
+    'TTb' : '5DJ62zL2Vs2Lb6tdGqAy2wk7oq7sWzvmHvtxiSxqwq6EDktk', 'TTc' : '5F2CidPunAY6DY3PLFS4mAKkAYKbxA428PwZ8546ruLfkGMd',
+    'TTd' : '5DtPa5A7VQ4h99RonVajkh1hKv8DkTTAiG14gJCuwYKShsC7', 'TTe' : '5CBA4DgGXfKUeHLJeHgo6SSHdmyLiNTfAF8TifsgRo7bYkBM',
+    'TTf' : '5CZyJ7D1CZ1pvDFAXJr2YRjRK5Y4XbmSwUMMfyWkNY6otUix', 'TTg' : '5GYtaFxVgnoEpo1mVSYeBs8gCCca8ptN6oszJ7quDpDBE5sn',
+    'TTh' : '5CUeakYTrjoQMFgdRfYc5vwJ4ZZVriPF2RGZdnVhBFyM6GZC', 'TTi' : '5FRCkb2CJxUw9mDhX25TrbftYCEvcZE1BTugCU7EkNgRCzHR',
+    'TTj' : '5HiaLLDs16yPMnSzC46G6Q9SwTVkjkWDzJg1vpJJevZXusfw', 'TTk' : '5FcARLVRrVWw9GA2NEE4x4XRDfXdMgwRahKasD2Kx7kyVeLf',
+    'TTl' : '5EcEk9FCMo7Y8mGUeciSbHjVHbDfCrCUkZkumfnc83VAuRPf', 'TTm' : '5CULoekifcMWh7vK9VVvg6a1KB9hqcUokon5b8Z6z8Jd85vR',
+    'TTn' : '5GKoPvsEmw9HRRMH1d1p5yNjHAeq1C6f8TBb7QChwbwMbJoy', 'TTo' : '5G9y3wdnsASwd5xMYipLnk9Qj46JwbywyyTpNFvMGb8bXdGX', 
 }
 
 @app.get("/")
