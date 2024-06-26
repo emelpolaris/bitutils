@@ -5,18 +5,23 @@ import time
 import traceback
 from datetime import datetime
 import getpass
+import schedule
 
 # configure options for your command
 wallet = "JJcold"#"main-wallet"       # wallet name of your coldkey
 # hotkeys = ["JJwarm", "JJhot", "JJa", "JJb", "JJc", "JJd", "JJe", "JJf", "JJg", "JJh", "JJi", "JJj"] #["mining-hotkey-2"]        # a list with the names of all the hotkeys you want to register
-hotkeys = ["JJhot"]
+hotkeys = ["JJe"]
 netuid = int(input('Subnet ID: '))                        # subnet uid you want to register
 highest_cost = float(input('Max registration fee: '))                # the maximal amount of tao you are willing to burn to register
 # print('Type in your password:')
 password = str(getpass.getpass('Type in your password:'))        # password for your coldkey
-iterate = True 
+# iterate = True 
 
 # start registraion bot
+
+
+iterate = True 
+
 while True:
     for hotkey in hotkeys:
         while iterate:
@@ -85,3 +90,4 @@ while True:
                     break
                 else:
                     continue
+
